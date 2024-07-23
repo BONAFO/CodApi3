@@ -1,0 +1,16 @@
+.gm-cont {
+    width: 70%;
+    height: 30vh !important;
+    margin: 3% calc(30% /2);
+    opacity: .6;
+    filter: grayscale(100%);
+    background-image: url("https://wallpapers.com/images/hd/2560-x-1440-black-ops-2-3nsc7itc7hp4124t.jpg");
+    background-size: cover;
+    transition: filter .3s, opacity .3s;
+    cursor: pointer;
+}
+
+.gm-cont:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
