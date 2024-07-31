@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        * {
+            background-color: black;
+        }
+    </style>
+
+    <script src="../Front/libs/pako.js"></script>
+    <script src="../Front/libs/zip.js"></script>
+    <script>
+        const save = localStorage.getItem("codtemp");
+        const data = unzip(save);
+
+        const contenido = new Blob([data], {
+            type: 'application/json'
+        });
+
+        let enlace = document.createElement('a');
+        enlace.href = URL.createObjectURL(contenido);
+        enlace.download = "api_call_of_duty_01.json";
+        document.body.appendChild(enlace);
+        enlace.click();
+        document.body.removeChild(enlace);
+        localStorage.removeItem("codtemp")
+    </script>
+
+</body>
+
+</html>
